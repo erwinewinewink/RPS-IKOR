@@ -102,11 +102,15 @@ async function startServer() {
         PENTING: Gunakan Taksonomi Bloom C2-C6. HANYA berikan output JSON murni, tanpa teks penjelasan, tanpa markdown.
         Format JSON: {"deskripsiMK": "...", "cpmk": [{"kode": "...", "deskripsi": "...", "cplTerkait": ["..."]}], "subCpmk": [{"kode": "...", "deskripsi": "...", "cpmkTerkait": "...", "levelKognitif": "..."}]}`;
       } else if (step === 2) {
-        prompt = `Berdasarkan ${contextData}, susunlah Materi Pembelajaran (1-16) dan Jadwal Mingguan untuk: ${courseMetadata}.
+        prompt = `Berdasarkan ${contextData}, susunlah 14 Materi Pembelajaran inti dan Jadwal Mingguan 16 pertemuan untuk: ${courseMetadata}.
         Gunakan Bahan Kajian: ${JSON.stringify(bahanKajian)}.
         Pastikan materi pembelajaran selaras dengan deskripsi MK.
+        Materi Pembelajaran harus berisi tepat 14 item; jangan memasukkan UTS pertemuan 8 atau UAS pertemuan 16 ke dalam array materi.
+        Jadwal harus berisi tepat 16 objek. Gunakan "minggu" sebagai angka 1-16 dan "bobot" sebagai angka.
+        Setiap objek jadwal wajib memiliki: minggu, subCpmk, materi, metode, waktu, pengalamanBelajar, indikator, teknikPenilaian, bobot.
+        Total seluruh bobot jadwal harus 100.
         HANYA berikan output JSON murni, tanpa teks penjelasan, tanpa markdown.
-        Format JSON: {"materiPembelajaran": ["..."], "mingguan": [{"minggu": "...", "materi": "...", "bobot": "..."}]}`;
+        Format JSON: {"materiPembelajaran": ["Materi 1", "...", "Materi 14"], "mingguan": [{"minggu": 1, "subCpmk": "Sub-CPMK 1", "materi": "...", "metode": "...", "waktu": "${Number(sks) * 50}", "pengalamanBelajar": "...", "indikator": "...", "teknikPenilaian": "...", "bobot": 5}]}`;
       } else {
         prompt = `Berdasarkan ${contextData}, susunlah Daftar Pustaka (Utama, Jurnal, Pendukung) untuk: ${courseMetadata}.
         Gunakan Bahan Kajian: ${JSON.stringify(bahanKajian)}.

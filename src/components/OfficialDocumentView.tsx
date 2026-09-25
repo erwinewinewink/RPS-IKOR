@@ -321,10 +321,10 @@ export const OfficialDocumentView: React.FC<Props> = ({ rps, onOpenModulAjar }) 
           </div>
         </div>
 
-        {/* Materi Pembelajaran: 16 Rincian Mingguan */}
+        {/* Materi Pembelajaran: 14 materi inti; UTS/UAS berada pada jadwal minggu 8/16 */}
         <div className="border border-slate-600 rounded-none overflow-hidden flex flex-col">
           <div className="bg-slate-100 border-b border-slate-600 p-2 font-bold text-xs uppercase text-slate-800 flex justify-between items-center">
-            <span>Materi Pembelajaran (Rincian 16 Pertemuan Sinkron Pustaka)</span>
+            <span>Materi Pembelajaran (14 Materi Inti; UTS/UAS pada Minggu 8 dan 16)</span>
             <span className="text-[10px] font-normal normal-case text-emerald-800 font-semibold">
               Terverifikasi Nyata dari Pustaka
             </span>

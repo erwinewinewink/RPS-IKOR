@@ -188,21 +188,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     'Sub-CPMK 11-CPMK 3': true,
     'Sub-CPMK 12-CPMK 4': true,
     'Sub-CPMK 13-CPMK 4': true,
-    'Sub-CPMK 14-CPMK 4': true,
-    'CPMK 1-Sub-CPMK 1': true,
-    'CPMK 1-Sub-CPMK 2': true,
-    'CPMK 1-Sub-CPMK 3': true,
-    'CPMK 2-Sub-CPMK 4': true,
-    'CPMK 2-Sub-CPMK 5': true,
-    'CPMK 2-Sub-CPMK 6': true,
-    'CPMK 2-Sub-CPMK 7': true,
-    'CPMK 3-Sub-CPMK 8': true,
-    'CPMK 3-Sub-CPMK 9': true,
-    'CPMK 3-Sub-CPMK 10': true,
-    'CPMK 3-Sub-CPMK 11': true,
-    'CPMK 4-Sub-CPMK 12': true,
-    'CPMK 4-Sub-CPMK 13': true,
-    'CPMK 4-Sub-CPMK 14': true
+    'Sub-CPMK 14-CPMK 4': true
   };
 
   // Bahan Kajian: Materi Besar / Pokok Bahasan Keilmuan (7 Pokok Bahasan Utama)
@@ -216,7 +202,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     `7. Sport Analytics Digital, Analisis Video Pertandingan, dan Evaluasi Performa Atlet.`
   ];
 
-  // Materi Pembelajaran 1 s/d 16 yang sinkron dengan sumber kepustakaan
+  // Materi inti 1 s/d 14. Pertemuan 8 dan 16 adalah ujian, bukan materi baru.
   const materiPembelajaran: string[] = [
     `1. Sejarah perkembangan ${topikTeks} dunia & nasional; regulasi federasi resmi; nilai sportivitas & etika Al-Islam.`,
     `2. Analisis biomekanik gerak fundamental tubuh dan koordinasi kinetik pada teknik ${topikTeks}.`,
@@ -225,15 +211,13 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     `5. Konsep kerjasama taktik menyerang & prinsip pertahanan terorganisir dengan implementasi teknik dasar.`,
     `6. Komponen kondisi fisik dominan: power eksplosif, kelincahan (agility), dan kapasitas anaerobik dalam praktik teknik dasar.`,
     `7. Analisis sistem formasi permainan tim serta respons terhadap variasi formasi lawan dengan integrasi teknik dasar.`,
-    `8. Evaluasi tengah semester tertulis dan unjuk keterampilan teknik dasar (materi pertemuan 1 s.d 7).`,
-    `9. Pola transisi cepat, set plays situasi khusus, dan manajemen waktu pertandingan melalui penguasaan teknik dasar.`,
-    `10. Teori kepelatihan olahraga, periodisasi latihan fisik-teknik, dan psikologi atlet muda dalam penguasaan teknik dasar.`,
-    `11. Pemanfaatan perangkat lunak video analisis untuk evaluasi gerak teknik dasar dan taktik tim.`,
-    `12. Mekanisme perwasitan resmi, sinyal wasit, penegakan regulasi, dan praktik memimpin laga dengan teknik dasar.`,
-    `13. Pengolahan data statistik box score / tracking data berbasis aplikasi sport digital terkait efektivitas teknik dasar.`,
-    `14. Penyusunan program latihan mingguan (microcycle) berbasis bukti ilmiah sport science termasuk penguasaan teknik dasar.`,
-    `15. Pembuatan portofolio digital modul latihan dan analisis video evaluasi performa teknik dasar.`,
-    `16. Evaluasi akhir semester komprehensif; ujian tertulis taktik dan ujian kepelatihan/analisis portofolio teknik dasar.`
+    `8. Pola transisi cepat, set plays situasi khusus, dan manajemen waktu pertandingan melalui penguasaan teknik dasar.`,
+    `9. Teori kepelatihan olahraga, periodisasi latihan fisik-teknik, dan psikologi atlet muda dalam penguasaan teknik dasar.`,
+    `10. Pemanfaatan perangkat lunak video analisis untuk evaluasi gerak teknik dasar dan taktik tim.`,
+    `11. Mekanisme perwasitan resmi, sinyal wasit, penegakan regulasi, dan praktik memimpin laga dengan teknik dasar.`,
+    `12. Pengolahan data statistik box score / tracking data berbasis aplikasi sport digital terkait efektivitas teknik dasar.`,
+    `13. Penyusunan program latihan mingguan (microcycle) berbasis bukti ilmiah sport science termasuk penguasaan teknik dasar.`,
+    `14. Pembuatan portofolio digital modul latihan dan analisis video evaluasi performa teknik dasar.`
   ];
 
   // Jadwal 16 Pertemuan
@@ -319,7 +303,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 8,
       subCpmk: 'UTS (Evaluasi Sub-CPMK 1–7)',
-      materi: materiPembelajaran[7],
+      materi: 'Ujian Tengah Semester: evaluasi materi pertemuan 1 s.d. 7.',
       metode: 'Ujian Tulis & Praktik Terstruktur',
       waktu: waktuFormat,
       pengalamanBelajar: 'Mengerjakan soal evaluasi tertulis dan analisis studi kasus.',
@@ -330,7 +314,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 9,
       subCpmk: 'Sub-CPMK 8',
-      materi: materiPembelajaran[8],
+      materi: materiPembelajaran[7],
       metode: 'Analisis Kasus, Diskusi',
       waktu: waktuFormat,
       pengalamanBelajar: 'Menganalisis skema situasi khusus dan transisi permainan.',
@@ -341,7 +325,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 10,
       subCpmk: 'Sub-CPMK 9',
-      materi: materiPembelajaran[9],
+      materi: materiPembelajaran[8],
       metode: 'Analisis Kasus, Diskusi',
       waktu: waktuFormat,
       pengalamanBelajar: 'Mengkaji prinsip kepelatihan olahraga dan manajemen tim.',
@@ -352,7 +336,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 11,
       subCpmk: 'Sub-CPMK 10',
-      materi: materiPembelajaran[10],
+      materi: materiPembelajaran[9],
       metode: 'Praktikum Digital',
       waktu: waktuFormat,
       pengalamanBelajar: 'Mengevaluasi cuplikan pertandingan menggunakan video analisis.',
@@ -363,7 +347,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 12,
       subCpmk: 'Sub-CPMK 11',
-      materi: materiPembelajaran[11],
+      materi: materiPembelajaran[10],
       metode: 'Praktikum Lapangan',
       waktu: waktuFormat,
       pengalamanBelajar: 'Simulasi memimpin pertandingan dan menegakkan regulasi resmi.',
@@ -374,7 +358,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 13,
       subCpmk: 'Sub-CPMK 12',
-      materi: materiPembelajaran[12],
+      materi: materiPembelajaran[11],
       metode: 'Project Based Learning',
       waktu: waktuFormat,
       pengalamanBelajar: 'Mengolah dan menginterpretasikan data statistik pertandingan.',
@@ -385,7 +369,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 14,
       subCpmk: 'Sub-CPMK 13',
-      materi: materiPembelajaran[13],
+      materi: materiPembelajaran[12],
       metode: 'Project Based Learning',
       waktu: waktuFormat,
       pengalamanBelajar: 'Menyusun draf program latihan mingguan (microcycle).',
@@ -396,7 +380,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 15,
       subCpmk: 'Sub-CPMK 14',
-      materi: materiPembelajaran[14],
+      materi: materiPembelajaran[13],
       metode: 'Project Based Learning',
       waktu: waktuFormat,
       pengalamanBelajar: 'Menyusun portofolio digital modul latihan dan analisis video.',
@@ -407,7 +391,7 @@ export function generateSmartRPS(mk: MataKuliah, options?: {
     {
       minggu: 16,
       subCpmk: 'UAS (Evaluasi Sub-CPMK 8–14)',
-      materi: materiPembelajaran[15],
+      materi: 'Ujian Akhir Semester: evaluasi komprehensif materi pertemuan 9 s.d. 15.',
       metode: 'Ujian Sumatif Komprehensif',
       waktu: waktuFormat,
       pengalamanBelajar: 'Menyajikan pertanggungjawaban portofolio dan mengikuti evaluasi komprehensif.',
