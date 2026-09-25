@@ -1,0 +1,6 @@
+{
+  "name": "Generator RPS Berbasis OBE - Kurikulum IKOR Unismuh Palu",
+  "description": "Aplikasi Penyusunan dan Generator Rencana Pembelajaran Semester (RPS) Berbasis Outcome-Based Education (OBE) Program Studi Ilmu Keolahragaan FKIP Universitas Muhammadiyah Palu.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
