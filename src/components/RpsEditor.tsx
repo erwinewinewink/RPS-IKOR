@@ -1180,10 +1180,10 @@ export const RpsEditor: React.FC<Props> = ({ initialCourse, onSaveToBank }) => {
 
                   <div className="p-4 bg-slate-50 rounded-xl border border-slate-200">
                     <label className="block text-xs font-bold text-slate-800 mb-1">
-                      📖 2. Materi Pembelajaran Sinkron Pustaka (Rincian 16 Pertemuan - 1 baris per pertemuan)
+                      📖 2. Materi Pembelajaran Sinkron Pustaka (14 Materi Inti)
                     </label>
                     <p className="text-[11px] text-slate-500 mb-2">
-                      Rincian topik yang diajarkan pada setiap pertemuan 1 s/d 16, bersumber langsung dari daftar pustaka.
+                      Isi 14 materi inti. Pertemuan 8 dan 16 digunakan untuk UTS dan UAS pada tabel rencana pembelajaran.
                     </p>
                     <textarea
                       rows={8}

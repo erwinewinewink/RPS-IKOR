@@ -160,15 +160,13 @@ export const SAMPLE_RPS_BOLA_BASKET: RPSDocument = {
     '5. Konsep dasar kerjasama taktik menyerang (give & go) dan pengenalan prinsip pertahanan dasar.',
     '6. Komponen fisik dominan bola basket (power eksplosif kaki, agility, speed, anaerobic endurance).',
     '7. Analisis taktik tim: Motion offense, pick and roll, serta perbandingan pertahanan zone defense vs man-to-man defense.',
-    '8. Evaluasi tengah semester mencakup penguasaan materi teoretis peraturan, biomekanika, dan teknik dasar (Pertemuan 1 s.d. 7).',
-    '9. Skema set plays (out of bounds plays) dan transisi cepat menyerang (fast break).',
-    '10. Metodologi kepelatihan bola basket, manajemen tim, dan psikologi pemain muda.',
-    '11. Pemanfaatan perangkat lunak video analisis untuk membedah efektivitas tembakan dan taktik lawan.',
-    '12. Mekanisme perwasitan FIBA (Referee & Umpire), isyarat tangan wasit, pelanggaran (foul & violation), dan praktik memimpin laga.',
-    '13. Pengolahan data statistik box score pertandingan (points, assists, rebounds, turnovers) berbasis digital.',
-    '14. Penyusunan program latihan mingguan (microcycle) dan perancangan strategi taktik khusus.',
-    '15. Pembuatan portofolio digital modul latihan, video skema taktik, dan analisis evaluasi tim.',
-    '16. Evaluasi akhir semester komprehensif; ujian tertulis taktik dan ujian praktik perwasitan/kepelatihan.'
+    '8. Skema set plays (out of bounds plays) dan transisi cepat menyerang (fast break).',
+    '9. Metodologi kepelatihan bola basket, manajemen tim, dan psikologi pemain muda.',
+    '10. Pemanfaatan perangkat lunak video analisis untuk membedah efektivitas tembakan dan taktik lawan.',
+    '11. Mekanisme perwasitan FIBA (Referee & Umpire), isyarat tangan wasit, pelanggaran (foul & violation), dan praktik memimpin laga.',
+    '12. Pengolahan data statistik box score pertandingan (points, assists, rebounds, turnovers) berbasis digital.',
+    '13. Penyusunan program latihan mingguan (microcycle) dan perancangan strategi taktik khusus.',
+    '14. Pembuatan portofolio digital modul latihan, video skema taktik, dan analisis evaluasi tim.'
   ],
   pustakaUtama: [
     'Ahmadi, N. (2017). Permainan Bola Basket. Surakarta: Era Intermedia.',
