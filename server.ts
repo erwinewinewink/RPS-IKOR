@@ -105,8 +105,11 @@ async function startServer() {
         prompt = `Berdasarkan ${contextData}, susunlah Materi Pembelajaran (1-16) dan Jadwal Mingguan untuk: ${courseMetadata}.
         Gunakan Bahan Kajian: ${JSON.stringify(bahanKajian)}.
         Pastikan materi pembelajaran selaras dengan deskripsi MK.
+        Jadwal harus berisi tepat 16 objek. Gunakan "minggu" sebagai angka 1-16 dan "bobot" sebagai angka.
+        Setiap objek jadwal wajib memiliki: minggu, subCpmk, materi, metode, waktu, pengalamanBelajar, indikator, teknikPenilaian, bobot.
+        Total seluruh bobot jadwal harus 100.
         HANYA berikan output JSON murni, tanpa teks penjelasan, tanpa markdown.
-        Format JSON: {"materiPembelajaran": ["..."], "mingguan": [{"minggu": "...", "materi": "...", "bobot": "..."}]}`;
+        Format JSON: {"materiPembelajaran": ["..."], "mingguan": [{"minggu": 1, "subCpmk": "Sub-CPMK 1", "materi": "...", "metode": "...", "waktu": "${Number(sks) * 50}", "pengalamanBelajar": "...", "indikator": "...", "teknikPenilaian": "...", "bobot": 5}]}`;
       } else {
         prompt = `Berdasarkan ${contextData}, susunlah Daftar Pustaka (Utama, Jurnal, Pendukung) untuk: ${courseMetadata}.
         Gunakan Bahan Kajian: ${JSON.stringify(bahanKajian)}.

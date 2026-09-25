@@ -44,12 +44,12 @@ interface Props {
 
 export const RpsEditor: React.FC<Props> = ({ initialCourse, onSaveToBank }) => {
   const [selectedCourseCode, setSelectedCourseCode] = useState<string>(
-    initialCourse ? initialCourse.kode : 'SOR2026009'
+    initialCourse ? initialCourse.kode : 'SS2026042'
   );
   const [currentRps, setCurrentRps] = useState<RPSDocument>(() => {
     const defaultCourse = MATA_KULIAH_DATABASE.find(
-      (mk) => mk.kode === (initialCourse ? initialCourse.kode : 'SOR2026009')
-    ) || MATA_KULIAH_DATABASE[8];
+      (mk) => mk.kode === (initialCourse ? initialCourse.kode : 'SS2026042')
+    ) || MATA_KULIAH_DATABASE.find((mk) => mk.kode === 'SS2026005') || MATA_KULIAH_DATABASE[0];
     return generateSmartRPS(defaultCourse);
   });
 
@@ -170,7 +170,13 @@ export const RpsEditor: React.FC<Props> = ({ initialCourse, onSaveToBank }) => {
               cplList: currentRps.cplProdi,
               bahanKajian: currentRps.bahanKajian,
               courseDescription: currentRps.deskripsiMK,
-              specialNotes: 'PENTING: Sesuaikan materi pembelajaran, teknis, dan taktis secara spesifik HANYA untuk mata kuliah ' + currentRps.mataKuliah + '. Hapus semua terminologi olahraga lain (seperti bola, basket, dsb) jika tidak relevan.'
+              specialNotes: [
+                `Sesuaikan seluruh materi hanya untuk mata kuliah ${currentRps.mataKuliah}.`,
+                'Hapus terminologi cabang olahraga lain jika tidak relevan.',
+                currentRps.catatanFokusKhusus?.trim()
+                  ? `Fokus khusus dosen: ${currentRps.catatanFokusKhusus.trim()}.`
+                  : ''
+              ].filter(Boolean).join(' ')
             }),
           });
 
@@ -486,6 +492,25 @@ export const RpsEditor: React.FC<Props> = ({ initialCourse, onSaveToBank }) => {
             <BookMarked className="w-4 h-4 text-amber-300" />
             <span>Buat Modul Ajar (Min. 45 Lembar)</span>
           </button>
+        </div>
+        <div className="pt-1">
+          <label htmlFor="catatan-fokus-rps" className="block text-xs font-bold text-slate-700 mb-1.5">
+            Fokus atau konteks khusus perkuliahan
+            <span className="font-normal text-slate-400"> (opsional)</span>
+          </label>
+          <input
+            id="catatan-fokus-rps"
+            type="text"
+            value={currentRps.catatanFokusKhusus || ''}
+            onChange={(e) =>
+              setCurrentRps((prev) => ({ ...prev, catatanFokusKhusus: e.target.value }))
+            }
+            placeholder="Contoh: fokus renang gaya bebas untuk atlet pemula atau analisis cedera lutut"
+            className="w-full border border-slate-300 rounded-xl px-3 py-2 text-sm text-slate-800 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-red-600"
+          />
+          <p className="mt-1 text-[11px] text-slate-500">
+            Catatan ini digunakan oleh Generator AI dan Generator Cerdas untuk menyesuaikan CPMK, materi, serta asesmen.
+          </p>
         </div>
         {apiConnectionStatus && (
           <div className="mt-2 p-3 bg-amber-50 border border-amber-200 text-amber-800 rounded-lg text-xs font-medium animate-pulse">
